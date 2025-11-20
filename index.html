@@ -97,6 +97,10 @@
       padding: 20px 0;
       text-align: center;
       position: relative;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
     footer button {
@@ -114,7 +118,7 @@
       background-color: #e6c200;
     }
 
-    /* Modal */
+    /* Modals */
     .modal {
       display: none;
       position: fixed;
@@ -150,6 +154,38 @@
       color: #000;
     }
 
+    /* Contact form */
+    .contact-form label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    .contact-form button {
+      margin-top: 10px;
+      width: 100%;
+      padding: 10px;
+      background-color: #004080;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #002a60;
+    }
+
     @media (max-width: 600px) {
       main h1 {
         font-size: 2em;
@@ -183,7 +219,7 @@
         <i class="fas fa-chalkboard-teacher service-icon"></i>
         <div class="service-content">
           <h3>Employee Training</h3>
-          <p>Sales training for the German-speaking market</p>
+          <p>Sales training for the global market</p>
         </div>
       </div>
 
@@ -215,7 +251,7 @@
         <i class="fas fa-file-alt service-icon"></i>
         <div class="service-content">
           <h3>Written B2B Concepts</h3>
-          <p>Documentation and written models for the German-speaking area</p>
+          <p>Documentation and written models for the global market</p>
         </div>
       </div>
 
@@ -249,9 +285,10 @@
   <!-- Footer -->
   <footer>
     <button id="companyBtn">Company Info</button>
+    <button id="contactBtn">Contact</button>
   </footer>
 
-  <!-- Modal -->
+  <!-- Company Info Modal -->
   <div id="companyModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
@@ -265,16 +302,54 @@
     </div>
   </div>
 
-  <script>
-    var modal = document.getElementById("companyModal");
-    var btn = document.getElementById("companyBtn");
-    var span = document.getElementsByClassName("close")[0];
+  <!-- Contact Modal -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Contact Us</h2>
+      <form class="contact-form" action="https://formspree.io/f/myformid" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
 
-    btn.onclick = function() { modal.style.display = "block"; }
-    span.onclick = function() { modal.style.display = "none"; }
-    window.onclick = function(event) { if(event.target == modal){ modal.style.display = "none"; } }
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Modals
+    var companyModal = document.getElementById("companyModal");
+    var contactModal = document.getElementById("contactModal");
+    var companyBtn = document.getElementById("companyBtn");
+    var contactBtn = document.getElementById("contactBtn");
+    var closeBtns = document.getElementsByClassName("close");
+
+    companyBtn.onclick = function() { companyModal.style.display = "block"; }
+    contactBtn.onclick = function() { contactModal.style.display = "block"; }
+
+    for (let i = 0; i < closeBtns.length; i++) {
+      closeBtns[i].onclick = function() {
+        companyModal.style.display = "none";
+        contactModal.style.display = "none";
+      }
+    }
+
+    window.onclick = function(event) {
+      if (event.target == companyModal) companyModal.style.display = "none";
+      if (event.target == contactModal) contactModal.style.display = "none";
+    }
   </script>
 
 </body>
 </html>
+
 
