@@ -1,69 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>From B2B – Sales Consulting</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FromB2B Sales Consultancy</title>
+  <style>
+    /* Allgemeine Einstellungen */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header mit Logo */
+    header {
+      background-color: #004080;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    header img {
+      max-height: 80px;
+      width: auto;
+    }
+
+    /* Hauptbereich */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    main .card {
+      background-color: white;
+      padding: 30px 20px;
+      max-width: 800px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    main .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+    }
+
+    main h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #004080;
+    }
+
+    main p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #004080;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    footer a {
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsives Design */
+    @media (max-width: 600px) {
+      main h1 {
+        font-size: 2em;
+      }
+
+      main p {
+        font-size: 1em;
+      }
+
+      main .card {
+        padding: 20px 15px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="logo">FROM B2B</div>
-    <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#impressum">Impressum</a></li>
-    </ul>
-</nav>
+  <!-- Header mit Logo -->
+  <header>
+    <img src="logo.png" alt="FromB2B Sales Consultancy Logo">
+  </header>
 
-<header class="hero">
-    <img src="logo.jpeg" alt="From B2B Logo">
-    <h1>Sales Consulting for International B2B Markets</h1>
-    <p>Training, acquisition, sales strategy, and franchise development worldwide.</p>
-</header>
+  <!-- Hauptbereich -->
+  <main>
+    <div class="card">
+      <h1>Willkommen bei FromB2B Sales Consultancy</h1>
+      <p>Wir unterstützen Unternehmen dabei, ihre B2B-Vertriebsprozesse zu optimieren und neue Kunden nachhaltig zu gewinnen. Entdecken Sie unsere Services und erfahren Sie, wie wir Ihr Geschäft auf das nächste Level bringen können.</p>
+    </div>
+  </main>
 
-<section id="services" class="content">
-    <h2>Our Services</h2>
-    <ul>
-        <li><strong>Employee Training</strong> – Sales training for all language markets.</li>
-        <li><strong>Wholesale Client Acquisition</strong> – Global B2B outreach and acquisition.</li>
-        <li><strong>Sales Quota & Revenue Control</strong> – Monitoring results and performance.</li>
-        <li><strong>B2B Sales Conceptualization</strong> – Strategic development and planning.</li>
-        <li><strong>Written B2B Concepts</strong> – Documentation for German-speaking regions.</li>
-        <li><strong>Franchise Network Development</strong> – International franchise structures.</li>
-        <li><strong>Sales Script Writing</strong> – Tailored scripts for sales teams.</li>
-        <li><strong>Sales Strategy Performance Analysis</strong> – Evaluating effectiveness.</li>
-    </ul>
-</section>
-
-<section id="contact" class="content">
-    <h2>Contact Form</h2>
-    <form action="#" method="post">
-        <label>Name:</label>
-        <input type="text" name="name" required>
-
-        <label>Email:</label>
-        <input type="email" name="email" required>
-
-        <label>Message:</label>
-        <textarea name="message" rows="5" required></textarea>
-
-        <button type="submit">Send</button>
-    </form>
-</section>
-
-<footer id="impressum">
-    <h2>Impressum</h2>
-    <p>
-    <strong>Managing Director:</strong> Jovan Mitrovic<br>
-    <strong>Company Address:</strong> Vojvode Misica 88 / 11500 Obrenovac, Serbia<br>
-    <strong>Email:</strong> mitjov@freenet.de<br>
-    <strong>Phone:</strong> +381 64 553 7799<br>
-    <strong>Company ID:</strong> 67327454<br>
-    <strong>Tax ID:</strong> 114105410
-    </p>
-</footer>
+  <!-- Footer mit Impressums-Link -->
+  <footer>
+    <a href="impressum.html">Company Info</a>
+  </footer>
 
 </body>
 </html>
