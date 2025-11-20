@@ -286,6 +286,8 @@
   <footer>
     <button id="companyBtn">Company Info</button>
     <button id="contactBtn">Contact</button>
+    <button id="privacyBtn">Privacy Policy</button>
+    <button id="disclaimerBtn">Disclaimer</button>
   </footer>
 
   <!-- Company Info Modal -->
@@ -293,12 +295,14 @@
     <div class="modal-content">
       <span class="close">&times;</span>
       <h2>Company Info</h2>
+      <p><strong>Company Name:</strong> Jovan Mitrovic PR konsultantske aktivnosti u vezi sa poslovanjem i ostalim upravljanjem FROM B2B, Obrenovac</p>
       <p><strong>Managing Director:</strong> Jovan Mitrovic</p>
       <p><strong>Company Address:</strong> Vojvode Misica 88 / 11500 Obrenovac, Serbia</p>
       <p><strong>Email:</strong> <a href="mailto:mitjov@freenet.de">mitjov@freenet.de</a></p>
       <p><strong>Phone:</strong> +381 64 553 7799</p>
       <p><strong>Company ID:</strong> 67327454</p>
       <p><strong>Tax ID:</strong> 114105410</p>
+      <p><strong>Registered at:</strong> Serbian Business Register (APR)</p>
     </div>
   </div>
 
@@ -325,31 +329,59 @@
     </div>
   </div>
 
+  <!-- Privacy Policy Modal -->
+  <div id="privacyModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Privacy Policy</h2>
+      <p>We respect your privacy. Any personal information collected through our contact form will only be used to respond to your inquiry and will not be shared with third parties. Data is stored securely and deleted when no longer needed. You have the right to access, correct, or request deletion of your data at any time by contacting us.</p>
+    </div>
+  </div>
+
+  <!-- Disclaimer Modal -->
+  <div id="disclaimerModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Disclaimer</h2>
+      <p>The information on this website is provided for general informational purposes only and does not constitute legal or professional advice. We are not responsible for any actions taken based on the content of this site.</p>
+    </div>
+  </div>
+
   <script>
     // Modals
     var companyModal = document.getElementById("companyModal");
     var contactModal = document.getElementById("contactModal");
+    var privacyModal = document.getElementById("privacyModal");
+    var disclaimerModal = document.getElementById("disclaimerModal");
+
     var companyBtn = document.getElementById("companyBtn");
     var contactBtn = document.getElementById("contactBtn");
+    var privacyBtn = document.getElementById("privacyBtn");
+    var disclaimerBtn = document.getElementById("disclaimerBtn");
+
     var closeBtns = document.getElementsByClassName("close");
 
     companyBtn.onclick = function() { companyModal.style.display = "block"; }
     contactBtn.onclick = function() { contactModal.style.display = "block"; }
+    privacyBtn.onclick = function() { privacyModal.style.display = "block"; }
+    disclaimerBtn.onclick = function() { disclaimerModal.style.display = "block"; }
 
     for (let i = 0; i < closeBtns.length; i++) {
       closeBtns[i].onclick = function() {
         companyModal.style.display = "none";
         contactModal.style.display = "none";
+        privacyModal.style.display = "none";
+        disclaimerModal.style.display = "none";
       }
     }
 
     window.onclick = function(event) {
-      if (event.target == companyModal) companyModal.style.display = "none";
-      if (event.target == contactModal) contactModal.style.display = "none";
+      if(event.target == companyModal) companyModal.style.display = "none";
+      if(event.target == contactModal) contactModal.style.display = "none";
+      if(event.target == privacyModal) privacyModal.style.display = "none";
+      if(event.target == disclaimerModal) disclaimerModal.style.display = "none";
     }
   </script>
 
 </body>
 </html>
-
-
