@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fromb2bsalesconsultancy.github.io/fromb2b/sitemap.xml
